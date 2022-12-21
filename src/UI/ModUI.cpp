@@ -37,6 +37,12 @@ void ScoreQolourUI::DidActivate(bool firstActivation, bool addedToHierarchy, boo
             text1->set_alignment(TextAlignmentOptions::Center);
             text1->set_fontSize(4.0f);
         
+        
+        BeatSaberUI::CreateToggle(container->get_transform(), "Enable First Score Qolour", getModConfig().Score1Enabled.GetValue(), [](bool value)
+        {
+            getModConfig().Score1Enabled.SetValue(value);
+        });
+
         auto activation1 = BeatSaberUI::CreateIncrementSetting(container->get_transform(), "Score", 0, 50000, getModConfig().Score1.GetValue(), [](float value)
         {
             if (value  <= 0)
@@ -74,6 +80,12 @@ void ScoreQolourUI::DidActivate(bool firstActivation, bool addedToHierarchy, boo
             text2->set_alignment(TextAlignmentOptions::Center);
             text2->set_fontSize(4.0f);
         
+
+        BeatSaberUI::CreateToggle(container->get_transform(), "Enable Second Score Qolour", getModConfig().Score2Enabled.GetValue(), [](bool value)
+        {
+            getModConfig().Score2Enabled.SetValue(value);
+        });
+
         auto activation2 = BeatSaberUI::CreateIncrementSetting(container->get_transform(), "Score", 0, 50000, getModConfig().Score2.GetValue(), [](float value)
         {
             if (value  <= 0)
@@ -110,6 +122,12 @@ void ScoreQolourUI::DidActivate(bool firstActivation, bool addedToHierarchy, boo
             text3->set_alignment(TextAlignmentOptions::Center);
             text3->set_fontSize(4.0f);
         
+
+        BeatSaberUI::CreateToggle(container->get_transform(), "Enable Third Score Qolour", getModConfig().Score3Enabled.GetValue(), [](bool value)
+        {
+            getModConfig().Score3Enabled.SetValue(value);
+        });
+
         auto activation3 = BeatSaberUI::CreateIncrementSetting(container->get_transform(), "Score", 0, 50000, getModConfig().Score3.GetValue(), [](float value)
         {
             if (value  <= 0)
@@ -147,6 +165,12 @@ void ScoreQolourUI::DidActivate(bool firstActivation, bool addedToHierarchy, boo
             text4->set_alignment(TextAlignmentOptions::Center);
             text4->set_fontSize(4.0f);
         
+
+        BeatSaberUI::CreateToggle(container->get_transform(), "Enable Fourth Score Qolour", getModConfig().Score4Enabled.GetValue(), [](bool value)
+        {
+            getModConfig().Score4Enabled.SetValue(value);
+        });
+
         auto activation4 = BeatSaberUI::CreateIncrementSetting(container->get_transform(), "Score", 0, 50000, getModConfig().Score4.GetValue(), [](float value)
         {
             if (value  <= 0)
