@@ -1,0 +1,29 @@
+<bg id='root' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/RedBrumbler/Quest-BSML-Docs/gh-pages/schema.xsd'>
+    <tab-selector tab-tag='tabs'/>
+
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name='Score One' tags='tabs'>
+
+        </tab>
+    </horizontal>
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name='Score Two' tags='tabs'>
+
+        </tab>
+    </horizontal>
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name='Score Three' tags='tabs'>
+
+        </tab>
+    </horizontal>
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name='Score Four' tags='tabs'>
+
+        </tab>
+    </horizontal>
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name='Score 5' tags='tabs'>
+
+        </tab>
+    </horizontal>
+</bg>

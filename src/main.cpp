@@ -6,6 +6,10 @@
 #include "questui/shared/QuestUI.hpp"
 #include "chroma/shared/CoreAPI.hpp"
 
+#include "UI/FlowCoordinator.hpp"
+#include "bsml/shared/BSML.hpp"
+using namespace BSML;
+
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
 // Loads the config from disk using our modInfo, then returns it for use
@@ -36,8 +40,12 @@ extern "C" void load() {
     il2cpp_functions::Init();
 
     getModConfig().Init(modInfo);
-    QuestUI::Init();
-    QuestUI::Register::RegisterMainMenuModSettingsViewController<ScoreQolour::UI::ScoreQolourUI *>(modInfo, "ScoreQolour");
+    //QuestUI::Init();
+    //QuestUI::Register::RegisterMainMenuModSettingsViewController<ScoreQolour::UI::ScoreQolourUI *>(modInfo, "ScoreQolour");
+    BSML::Register::RegisterMenuButton("Score Qolour", "", []()
+    {
+        QuestUI::BeatSaberUI::CreateFlowCoordinator<ScoreQolour::UI::ScoreQolourFlow *>();
+    });
 
     getLogger().info("Installing hooks...");
 
