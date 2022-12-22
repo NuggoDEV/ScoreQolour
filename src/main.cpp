@@ -46,13 +46,9 @@ extern "C" void load() {
     il2cpp_functions::Init();
 
     getModConfig().Init(modInfo);
-    //QuestUI::Init();
-    //QuestUI::Register::RegisterMainMenuModSettingsViewController<ScoreQolour::UI::ScoreQolourUI *>(modInfo, "ScoreQolour");
-    BSML::Register::RegisterSettingsMenu("Score Qolour", MOD_ID " settings", ScoreQolourManager::get_instance(), false);
-    
-    
 
     getLogger().info("Installing hooks...");
+    BSML::Register::RegisterSettingsMenu("Score Qolour", MOD_ID "_settings", UIManager::get_instance(), false);
 
     Hooks::InstallHooks(getLogger());
     Chroma::CoreAPI::addForceEnableChromaHooks(modInfo);

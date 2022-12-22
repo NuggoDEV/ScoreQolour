@@ -41,5 +41,11 @@ MAKE_AUTO_HOOK_MATCH(ScoreUIController_UpdateScore, &ScoreUIController::UpdateSc
             BombAPI::setGlobalBombColorSafe(getModConfig().BombColour4.GetValue());
             ObstacleAPI::setAllObstacleColorSafe(getModConfig().WallColour4.GetValue());
         }
+        if (multipliedScore >= getModConfig().Score5.GetValue() && getModConfig().Score5Enabled.GetValue())
+        {
+            NoteAPI::setGlobalNoteColorSafe(getModConfig().LeftSaber5.GetValue(), getModConfig().RightSaber5.GetValue());
+            BombAPI::setGlobalBombColorSafe(getModConfig().BombColour5.GetValue());
+            ObstacleAPI::setAllObstacleColorSafe(getModConfig().WallColour5.GetValue());
+        }
     }
 }
