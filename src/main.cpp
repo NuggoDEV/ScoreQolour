@@ -1,14 +1,13 @@
 #include "main.hpp"
 #include "Hooks.hpp"
 #include "ModConfig.hpp"
-//#include "UI/ModUI.hpp"
-//#include "UI/UIManager.hpp"
 
 #include "questui/shared/QuestUI.hpp"
 #include "chroma/shared/CoreAPI.hpp"
 
-#include "UI/FlowCoordinator.hpp"
+#include "assets.hpp"
 #include "bsml/shared/BSML.hpp"
+#include "bsml/shared/BSMLDataCache.hpp"
 using namespace BSML;
 
 #include "GlobalNamespace/GameplaySetupViewController.hpp"
@@ -22,7 +21,7 @@ using namespace QuestUI;
 #include "HMUI/ViewController.hpp"
 using namespace HMUI;
 
-#include "UI/FlowCoordinator.hpp"
+#include "UI/UIManager.hpp"
 using namespace ScoreQolour::UI;
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
@@ -50,30 +49,6 @@ extern "C" void setup(ModInfo& info) {
     getLogger().info("Completed setup!");
 }
 
-
-
-MAKE_AUTO_HOOK_MATCH(GameplaySetupViewController_RefreshContent, &GlobalNamespace::GameplaySetupViewController::RefreshContent, void, GlobalNamespace::GameplaySetupViewController *self)
-{
-    GameplaySetupViewController_RefreshContent(self);
-
-    
-}
-
-FlowCoordinator *parentFlow;
-ScoreQolourFlow *flow;
-
-void ShowFlow()
-{
-    if (flow == nullptr)
-    {
-        flow = BSML::Helpers::CreateFlowCoordinator<ScoreQolourFlow*>();
-    }
-
-    parentFlow = BeatSaberUI::GetMainFlowCoordinator()->YoungestChildFlowCoordinatorOrSelf();
-    parentFlow->PresentFlowCoordinator(flow, nullptr, ViewController::AnimationDirection::Horizontal, ViewController::AnimationType::Out, false);
-}
-
-
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
     il2cpp_functions::Init();
@@ -81,10 +56,7 @@ extern "C" void load() {
     getModConfig().Init(modInfo);
     //QuestUI::Init();
     //QuestUI::Register::RegisterMainMenuModSettingsViewController<ScoreQolour::UI::ScoreQolourUI *>(modInfo, "ScoreQolour");
-    BSML::Register::RegisterMenuButton("Score Qolour", "", []()
-    {
-        ShowFlow();
-    });
+    BSML::Register::RegisterSettingsMenu("Score Qolour", MOD_ID " settings", ScoreQolourManager::get_instance(), false);
     
     
 
@@ -94,4 +66,10 @@ extern "C" void load() {
     Chroma::CoreAPI::addForceEnableChromaHooks(modInfo);
     
     getLogger().info("Installed all hooks!");
+}
+
+
+BSML_DATACACHE(settings)
+{
+    return IncludedAssets::settings_bsml;
 }
