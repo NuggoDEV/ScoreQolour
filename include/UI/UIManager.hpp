@@ -9,8 +9,6 @@ using namespace UnityEngine;
 
 DECLARE_CLASS_CODEGEN(ScoreQolour::UI, UIManager, Il2CppObject,
     DECLARE_INSTANCE_FIELD(HMUI::ViewController*, settingsViewController);
-    
-    DECLARE_BSML_PROPERTY(bool, Enabled);
 
     DECLARE_BSML_PROPERTY(bool, Score1Enabled);
     DECLARE_BSML_PROPERTY(float, Score1);

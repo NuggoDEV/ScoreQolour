@@ -22,9 +22,6 @@ namespace ScoreQolour::UI
 
     }
 
-    bool UIManager::get_Enabled() { return getModConfig().Enabled.GetValue(); }
-    void UIManager::set_Enabled(bool value) { getModConfig().Enabled.SetValue(value); }
-
 
 
     bool UIManager::get_Score1Enabled() { return getModConfig().Score1Enabled.GetValue(); }

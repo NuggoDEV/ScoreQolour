@@ -6,8 +6,6 @@
 using namespace UnityEngine;
 
 DECLARE_CONFIG(ModConfig,
-    CONFIG_VALUE(Enabled, bool, "Enabled toggle switch", false);
-
     CONFIG_VALUE(Score1Enabled, bool, "First Score Toggle", false);
     CONFIG_VALUE(Score1, float, "First score activation", false);
     CONFIG_VALUE(LeftSaber1, Color, "Left Saber 1", Color(1, 0, 0, 1));

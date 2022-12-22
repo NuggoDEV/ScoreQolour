@@ -2,16 +2,12 @@
 #include "Hooks.hpp"
 #include "ModConfig.hpp"
 
-#include "questui/shared/QuestUI.hpp"
 #include "chroma/shared/CoreAPI.hpp"
 
 #include "assets.hpp"
 #include "bsml/shared/BSML.hpp"
 #include "bsml/shared/BSMLDataCache.hpp"
 using namespace BSML;
-
-#include "questui/shared/BeatSaberUI.hpp"
-using namespace QuestUI;
 
 #include "UI/UIManager.hpp"
 using namespace ScoreQolour::UI;
