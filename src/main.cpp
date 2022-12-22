@@ -10,16 +10,8 @@
 #include "bsml/shared/BSMLDataCache.hpp"
 using namespace BSML;
 
-#include "GlobalNamespace/GameplaySetupViewController.hpp"
-#include "bsml/shared/Helpers/creation.hpp"
-
 #include "questui/shared/BeatSaberUI.hpp"
 using namespace QuestUI;
-
-#include "HMUI/ViewController_AnimationDirection.hpp"
-#include "HMUI/ViewController_AnimationType.hpp"
-#include "HMUI/ViewController.hpp"
-using namespace HMUI;
 
 #include "UI/UIManager.hpp"
 using namespace ScoreQolour::UI;
