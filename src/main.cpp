@@ -1,10 +1,20 @@
 #include "main.hpp"
 #include "Hooks.hpp"
 #include "ModConfig.hpp"
-#include "UI/ModUI.hpp"
 
 #include "questui/shared/QuestUI.hpp"
 #include "chroma/shared/CoreAPI.hpp"
+
+#include "assets.hpp"
+#include "bsml/shared/BSML.hpp"
+#include "bsml/shared/BSMLDataCache.hpp"
+using namespace BSML;
+
+#include "questui/shared/BeatSaberUI.hpp"
+using namespace QuestUI;
+
+#include "UI/UIManager.hpp"
+using namespace ScoreQolour::UI;
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -36,13 +46,18 @@ extern "C" void load() {
     il2cpp_functions::Init();
 
     getModConfig().Init(modInfo);
-    QuestUI::Init();
-    QuestUI::Register::RegisterMainMenuModSettingsViewController<ScoreQolour::UI::ScoreQolourUI *>(modInfo, "ScoreQolour");
 
     getLogger().info("Installing hooks...");
+    BSML::Register::RegisterSettingsMenu("Score Qolour", MOD_ID "_settings", UIManager::get_instance(), false);
 
     Hooks::InstallHooks(getLogger());
     Chroma::CoreAPI::addForceEnableChromaHooks(modInfo);
     
     getLogger().info("Installed all hooks!");
+}
+
+
+BSML_DATACACHE(settings)
+{
+    return IncludedAssets::settings_bsml;
 }

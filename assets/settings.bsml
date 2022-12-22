@@ -1,0 +1,76 @@
+<bg id='root' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/RedBrumbler/Quest-BSML-Docs/gh-pages/schema.xsd'>
+    <tab-selector tab-tag='tabs'/>
+
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name="General" tags="tabs">
+            <vertical>
+                <toggle-setting value="Enabled" text="Mod Toggle" apply-on-change="true" hover-hint="Enable or Disable Score Qolour." />
+            </vertical>
+        </tab>
+        
+        
+        <tab tab-name='Score 1' tags='tabs'>
+            <vertical>
+                <toggle-setting value="Score1Enabled" text="Score One Toggle" apply-on-change="true" />
+                <increment-setting value="Score1" text="Score One" increment="50000" min="0" apply-on-change="true" hover-hint="Score the first colour change happens on." />
+
+                <color-setting value="LeftSaber1" text="Left Saber Colour" apply-on-change="true" />
+                <color-setting value="RightSaber1" text="Right Saber Colour" apply-on-change="true" />
+                <color-setting value="BombColour1" text="Bomb Colour" apply-on-change="true" />
+                <color-setting value="WallColour1" text="Wall Colour" apply-on-change="true" />
+            </vertical>
+        </tab>
+    
+    
+        <tab tab-name='Score 2' tags='tabs'>
+            <vertical>
+                <toggle-setting value="Score2Enabled" text="Score Two Toggle" apply-on-change="true" />
+                <increment-setting value="Score2" text="Score Two" increment="50000" min="0" apply-on-change="true" hover-hint="Score the second colour change happens on." />
+
+                <color-setting value="LeftSaber2" text="Left Saber Colour" apply-on-change="true" />
+                <color-setting value="RightSaber2" text="Right Saber Colour" apply-on-change="true" />
+                <color-setting value="BombColour2" text="Bomb Colour" apply-on-change="true" />
+                <color-setting value="WallColour2" text="Wall Colour" apply-on-change="true" />
+            </vertical>
+        </tab>
+    
+
+        <tab tab-name='Score 3' tags='tabs'>
+            <vertical>
+                <toggle-setting value="Score3Enabled" text="Score Three Toggle" apply-on-change="true" />
+                <increment-setting value="Score3" text="Score Three" increment="50000" min="0" apply-on-change="true" hover-hint="Score the third colour change happens on." />
+            
+                <color-setting value="LeftSaber3" text="Left Saber Colour" apply-on-change="true" />
+                <color-setting value="RightSaber3" text="Right Saber Colour" apply-on-change="true" />
+                <color-setting value="BombColour3" text="Bomb Colour" apply-on-change="true" />
+                <color-setting value="WallColour3" text="Wall Colour" apply-on-change="true" />   
+            </vertical>     
+        </tab>
+    
+
+        <tab tab-name='Score 4' tags='tabs'>
+            <vertical>
+                <toggle-setting value="Score4Enabled" text="Score Four Toggle" apply-on-change="true" />
+                <increment-setting value="Score4" text="Score Four" increment="50000" min="0" apply-on-change="true" hover-hint="Score the fourth colour change happens on." />
+                
+                <color-setting value="LeftSaber4" text="Left Saber Colour" apply-on-change="true" />
+                <color-setting value="RightSaber4" text="Right Saber Colour" apply-on-change="true" />
+                <color-setting value="BombColour4" text="Bomb Colour" apply-on-change="true" />
+                <color-setting value="WallColour4" text="Wall Colour" apply-on-change="true" /> 
+            </vertical>       
+        </tab>
+    
+
+        <tab tab-name='Score 5' tags='tabs'>
+            <vertical>
+                <toggle-setting value="Score5Enabled" text="Score Five Toggle" apply-on-change="true" />
+                <increment-setting value="Score5" text="Score Five" increment="50000" min="0" apply-on-change="true" hover-hint="Score the fifth colour change happens on." />
+                
+                <color-setting value="LeftSaber5" text="Left Saber Colour" apply-on-change="true" />
+                <color-setting value="RightSaber5" text="Right Saber Colour" apply-on-change="true" />
+                <color-setting value="BombColour5" text="Bomb Colour" apply-on-change="true" />
+                <color-setting value="WallColour5" text="Wall Colour" apply-on-change="true" />
+            </vertical>
+        </tab>
+    </horizontal>
+</bg>
